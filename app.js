@@ -10,11 +10,7 @@ const bodyParser = require("body-parser");
 
 
 // Server
-app.set("port", process.env.PORT || 3000);
-app.listen(app.get("port")), () => {
-    console.log(`Connection au port 3000 ${app.get("port")} `)
-}
-// Fin du // Server
+
 
 // Les chemins
 app.set("views", path.join(__dirname, "views"));
