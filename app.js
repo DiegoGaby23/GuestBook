@@ -22,7 +22,10 @@ app.set("view engine", "ejs");
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// Fin des  chemins
+
+// Routes
+
+app.use("/", require("./routes/index"));
 
 
 

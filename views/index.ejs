@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>App avec ejs et Express</title>
+    <% include partials/head %>
+        <title>
+            <%= title %>
+        </title>
 </head>
-<body>
-    <h1>EJS</h1>
+
+<body class="container">
+    
+        <h1>
+            <%= title %>
+        </h1>
+        <% include partials/header %>
+        <h2>
+            <a href="/">Express GuestBook </a>
+            <a href="/new-entry" class="btn btn-primary pull-right">Write a GuestBook</a>
+        </h2>
 </body>
+
 </html>
