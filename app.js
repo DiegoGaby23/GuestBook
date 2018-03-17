@@ -11,6 +11,10 @@ const bodyParser = require("body-parser");
 
 // Server
 
+app.set("port", process.env.PORT || 3000);
+app.listen(app.get("port")), () => {
+    console.log(`le serveur à démarré sur le unsafe 3000 ${app.get("port")} `);
+}
 
 // Les chemins
 app.set("views", path.join(__dirname, "views"));
