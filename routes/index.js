@@ -1,17 +1,33 @@
-const express = require("express");
-const router = express.Router();
-
+module.exports = (app) => {
+    let entries = [];
+    app.locals.entries = entries;
 // Route
-router.get("/", function (req, res) {
+app.get("/", function (req, res) {
     res.render("index", {
         title: "Bienvenue à mon site en NodeJs ! "
     });
 });
 
-router.get("/new-entry", function (req, res) {
+app.get("/new-entry", function (req, res) {
     res.render("new-entry", {
         title: "new-entry"
     });
 });
 
-module.exports = router;
+app.post("/new-entry",  (req, res) => {
+    if (!req.body.title || !req.body.body) {
+        res.send(404).send("Error page not found");
+    }
+
+
+let newEntry = {
+    title: req.body.title,
+    content: req.body.body,
+    pubished: new Date()
+};
+entries.push(newEntry);
+res.redirect("/");
+});
+}
+
+

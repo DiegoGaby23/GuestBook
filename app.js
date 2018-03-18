@@ -1,10 +1,10 @@
 
 // Exportations 
-const express = require("express");
-const app = express();
-const path = require("path");
-const morgan = require("morgan");
-const bodyParser = require("body-parser");
+let express = require("express");
+let app = express();
+let path = require("path");
+let morgan = require("morgan");
+let bodyParser = require("body-parser");
 // fin d'Exportations 
 
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
 
-app.use("/", require("./routes/index"));
+require('./routes/index')(app);
 
 
 

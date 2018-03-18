@@ -12,15 +12,31 @@
 </head>
 
 <body class="container">
-    
-        <h1>
-            <%= title %>
-        </h1>
-        <% include partials/header %>
-        <h2>
-            <a href="/">Express GuestBook </a>
-            <a href="/new-entry" class="btn btn-primary pull-right">Write a GuestBook</a>
-        </h2>
+
+
+
+    <% include partials/header %>
+
+        <% if(entries.length) { %>
+            <%  entries.forEach(function(entry) { %>
+                <div class="panel panel-primary">
+                    <div class=" anel panel-primary panel-heading">
+                        <%= entry.title %>
+                    </div>
+                    <div class=" panel panel-primary float-right">
+                        <%=  entry.pubished %>
+                    </div>
+                   
+                    <div class="panel panel-body">
+                        <%=  entry.content %>
+                    </div>
+               
+                </div>
+                <%  }) %>
+                    <% } else { %>
+                        <p>No existen entradas</p>
+                        <% } %>
+
 </body>
 
 </html>
