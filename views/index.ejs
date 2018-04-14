@@ -20,21 +20,21 @@
         <% if(entries.length) { %>
             <%  entries.forEach(function(entry) { %>
                 <div class="panel panel-primary">
-                    <div class=" anel panel-primary panel-heading">
+                    <div class=" panel panel-primary panel-heading">
                         <%= entry.title %>
                     </div>
                     <div class=" panel panel-primary float-right">
                         <%=  entry.pubished %>
                     </div>
-                   
+
                     <div class="panel panel-body">
                         <%=  entry.content %>
                     </div>
-               
+
                 </div>
                 <%  }) %>
                     <% } else { %>
-                        <p>No existen entradas</p>
+                        <p>No GuestBook</p>
                         <% } %>
 
 </body>

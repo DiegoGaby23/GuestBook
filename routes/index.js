@@ -2,9 +2,9 @@ module.exports = (app) => {
     let entries = [];
     app.locals.entries = entries;
     // Route
-    app.get("/",  (req, res) => {
+    app.get("/", (req, res) => {
         res.render("index", {
-            title: "Bienvenue à mon site en NodeJs ! "
+            title: "Write a GuestBook"
         });
     });
 
@@ -23,7 +23,7 @@ module.exports = (app) => {
         let newEntry = {
             title: req.body.title,
             content: req.body.body,
-            pubished: new Date()
+            pubished: new Date().toLocaleDateString()
         };
         entries.push(newEntry);
         res.redirect("/");
