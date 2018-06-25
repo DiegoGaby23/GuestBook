@@ -4,7 +4,7 @@ module.exports = (app) => {
     // Route
     app.get("/", (req, res) => {
         res.render("index", {
-            title: "Write a GuestBook"
+            title: "Gestion Taches"
         });
     });
 
